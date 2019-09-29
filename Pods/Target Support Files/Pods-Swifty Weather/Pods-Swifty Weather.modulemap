@@ -1,0 +1,6 @@
+framework module Pods_Swifty_Weather {
+  umbrella header "Pods-Swifty Weather-umbrella.h"
+
+  export *
+  module * { export * }
+}
