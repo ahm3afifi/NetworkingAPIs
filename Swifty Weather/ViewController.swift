@@ -12,7 +12,14 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        WeeklyWeatherForecast.downloadWeeklyWeatherForecast { (weeklyArray) in
+            
+            for forecast in weeklyArray {
+                print("forecast info: \(forecast.date), \(forecast.temp), \(forecast.weatherIcon)")
+            }
+        }
+        
     }
 
 
