@@ -8,14 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		76139E89234F6FE80015AD55 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76139E88234F6FE80015AD55 /* CurrentWeather.swift */; };
+		7626D453235387BB00597D05 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7626D452235387BB00597D05 /* WeatherViewController.swift */; };
 		7670E1C4234FCA8E000C71BC /* HourlyForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7670E1C3234FCA8E000C71BC /* HourlyForecast.swift */; };
 		767D061A23414665005D9057 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767D061923414665005D9057 /* AppDelegate.swift */; };
 		767D061C23414665005D9057 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767D061B23414665005D9057 /* SceneDelegate.swift */; };
-		767D061E23414665005D9057 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767D061D23414665005D9057 /* ViewController.swift */; };
 		767D062123414665005D9057 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 767D061F23414665005D9057 /* Main.storyboard */; };
 		767D062323414667005D9057 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 767D062223414667005D9057 /* Assets.xcassets */; };
 		767D062623414667005D9057 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 767D062423414667005D9057 /* LaunchScreen.storyboard */; };
+		769F49DD23546FFF00E8A170 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769F49DB23546FFF00E8A170 /* WeatherView.swift */; };
+		769F49DE23546FFF00E8A170 /* WeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 769F49DC23546FFF00E8A170 /* WeatherView.xib */; };
 		76BC15C0234F833200E0EE9B /* GlobalHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BC15BF234F833200E0EE9B /* GlobalHelpers.swift */; };
+		76D5B463235E66C000DAF06F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D5B462235E66C000DAF06F /* Extensions.swift */; };
 		76F9EDF9235138E9002B14C0 /* WeeklyWeatherForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F9EDF8235138E9002B14C0 /* WeeklyWeatherForecast.swift */; };
 		97C0D9FF25AD173B2B5C428D /* Pods_Swifty_Weather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C9D9A566906FE276335963 /* Pods_Swifty_Weather.framework */; };
 /* End PBXBuildFile section */
@@ -24,16 +27,19 @@
 		187F502745C5E358A989E2E8 /* Pods-Swifty Weather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swifty Weather.debug.xcconfig"; path = "Target Support Files/Pods-Swifty Weather/Pods-Swifty Weather.debug.xcconfig"; sourceTree = "<group>"; };
 		25C9D9A566906FE276335963 /* Pods_Swifty_Weather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swifty_Weather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76139E88234F6FE80015AD55 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
+		7626D452235387BB00597D05 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		7670E1C3234FCA8E000C71BC /* HourlyForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForecast.swift; sourceTree = "<group>"; };
 		767D061623414665005D9057 /* Swifty Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swifty Weather.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		767D061923414665005D9057 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		767D061B23414665005D9057 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		767D061D23414665005D9057 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		767D062023414665005D9057 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		767D062223414667005D9057 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		767D062523414667005D9057 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		767D062723414667005D9057 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		769F49DB23546FFF00E8A170 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		769F49DC23546FFF00E8A170 /* WeatherView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherView.xib; sourceTree = "<group>"; };
 		76BC15BF234F833200E0EE9B /* GlobalHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalHelpers.swift; sourceTree = "<group>"; };
+		76D5B462235E66C000DAF06F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		76F9EDF8235138E9002B14C0 /* WeeklyWeatherForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyWeatherForecast.swift; sourceTree = "<group>"; };
 		92CD529F018B1E8C7F9C4C3D /* Pods-Swifty Weather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swifty Weather.release.xcconfig"; path = "Target Support Files/Pods-Swifty Weather/Pods-Swifty Weather.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,8 +97,10 @@
 			isa = PBXGroup;
 			children = (
 				767D061923414665005D9057 /* AppDelegate.swift */,
+				7626D452235387BB00597D05 /* WeatherViewController.swift */,
+				76D5B462235E66C000DAF06F /* Extensions.swift */,
+				769C669D23548BDB007069D9 /* Views */,
 				767D061B23414665005D9057 /* SceneDelegate.swift */,
-				767D061D23414665005D9057 /* ViewController.swift */,
 				76BC15BF234F833200E0EE9B /* GlobalHelpers.swift */,
 				76139E8A234F6FEF0015AD55 /* Model */,
 				767D061F23414665005D9057 /* Main.storyboard */,
@@ -101,6 +109,15 @@
 				767D062723414667005D9057 /* Info.plist */,
 			);
 			path = "Swifty Weather";
+			sourceTree = "<group>";
+		};
+		769C669D23548BDB007069D9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				769F49DB23546FFF00E8A170 /* WeatherView.swift */,
+				769F49DC23546FFF00E8A170 /* WeatherView.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		FF1D6FC92283B173E66C4E7B /* Frameworks */ = {
@@ -174,6 +191,7 @@
 				767D062623414667005D9057 /* LaunchScreen.storyboard in Resources */,
 				767D062323414667005D9057 /* Assets.xcassets in Resources */,
 				767D062123414665005D9057 /* Main.storyboard in Resources */,
+				769F49DE23546FFF00E8A170 /* WeatherView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,13 +244,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				767D061E23414665005D9057 /* ViewController.swift in Sources */,
 				767D061A23414665005D9057 /* AppDelegate.swift in Sources */,
+				76D5B463235E66C000DAF06F /* Extensions.swift in Sources */,
 				76F9EDF9235138E9002B14C0 /* WeeklyWeatherForecast.swift in Sources */,
 				76BC15C0234F833200E0EE9B /* GlobalHelpers.swift in Sources */,
 				7670E1C4234FCA8E000C71BC /* HourlyForecast.swift in Sources */,
+				7626D453235387BB00597D05 /* WeatherViewController.swift in Sources */,
 				76139E89234F6FE80015AD55 /* CurrentWeather.swift in Sources */,
 				767D061C23414665005D9057 /* SceneDelegate.swift in Sources */,
+				769F49DD23546FFF00E8A170 /* WeatherView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
