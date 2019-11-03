@@ -124,9 +124,16 @@ class CurrentWeather {
     
     
     
-    func getCurrentWeather(completion: @escaping(_ success: Bool) -> Void) {
+    func getCurrentWeather(location: WeatherLocation, completion: @escaping(_ success: Bool) -> Void) {
         
-        let LOCATIONAPI_URL = "https://api.weatherbit.io/v2.0/current?city=Cairo,EG&key=f3da95f3913d4b8c9f45ba4eea5e3225"
+        var LOCATIONAPI_URL: String!
+        
+        if !location.isCurrentLocation {
+            
+            LOCATIONAPI_URL = String(format: "https://api.weatherbit.io/v2.0/current?city=%@,%@&key=f3da95f3913d4b8c9f45ba4eea5e3225", location.city, location.countryCode)
+        } else {
+            LOCATIONAPI_URL = CURRENTLOCATION_URL
+        }
         
         Alamofire.request(LOCATIONAPI_URL).responseJSON { (response) in
             

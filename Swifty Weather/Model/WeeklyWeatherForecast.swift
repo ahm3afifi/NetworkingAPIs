@@ -49,9 +49,17 @@ class WeeklyWeatherForecast {
     }
     
     
-    class func downloadWeeklyWeatherForecast(completion: @escaping (_ weatherForecast: [WeeklyWeatherForecast]) -> Void) {
+    class func downloadWeeklyWeatherForecast(location: WeatherLocation, completion: @escaping (_ weatherForecast: [WeeklyWeatherForecast]) -> Void) {
         
-        let WEEKLYFORECAST_URL = "https://api.weatherbit.io/v2.0/forecast/daily?city=Cairo,EG&days=7&key=f3da95f3913d4b8c9f45ba4eea5e3225"
+        var WEEKLYFORECAST_URL: String!
+        
+        if !location.isCurrentLocation {
+            
+            WEEKLYFORECAST_URL = String(format: "https://api.weatherbit.io/v2.0/forecast/hourly?city=%@,%@&hours=24&key=f3da95f3913d4b8c9f45ba4eea5e3225", location.city, location.countryCode)
+        } else {
+            
+            WEEKLYFORECAST_URL = CURRENTLOCATIONWEEKLYFORECAST_URL
+        }
         
         Alamofire.request(WEEKLYFORECAST_URL).responseJSON { (response) in
             

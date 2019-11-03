@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/ahm3afifi/Developer/Appstore Projects/Swifty Weather/Swifty Weather/APIUrls.swift">
+   </FileRef>
+   <FileRef
       location = "group:Swifty Weather.xcodeproj">
    </FileRef>
    <FileRef

@@ -49,9 +49,18 @@ class HourlyForecast {
     }
     
     
-    class   func downloadHourlyForecastWeather(completion: @escaping (_ hourlyForecast: [HourlyForecast]) -> Void) {
+    class   func downloadHourlyForecastWeather(location: WeatherLocation, completion: @escaping (_ hourlyForecast: [HourlyForecast]) -> Void) {
         
-        let HOURLYFORECAST_URL = "https://api.weatherbit.io/v2.0/forecast/hourly?city=Cairo,EG&hours=24&key=f3da95f3913d4b8c9f45ba4eea5e3225"
+        
+        var HOURLYFORECAST_URL: String!
+        
+        if !location.isCurrentLocation {
+            
+            HOURLYFORECAST_URL = String(format: "https://api.weatherbit.io/v2.0/forecast/hourly?city=%@,%@&hours=24&key=f3da95f3913d4b8c9f45ba4eea5e3225", location.city, location.countryCode)
+        } else {
+            
+            HOURLYFORECAST_URL = CURRENTLOCATIONHOURLYFORECAST_URL
+        }
         
         
         Alamofire.request(HOURLYFORECAST_URL).responseJSON { (response) in
