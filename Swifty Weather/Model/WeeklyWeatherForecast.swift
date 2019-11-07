@@ -55,7 +55,7 @@ class WeeklyWeatherForecast {
         
         if !location.isCurrentLocation {
             
-            WEEKLYFORECAST_URL = String(format: "https://api.weatherbit.io/v2.0/forecast/hourly?city=%@,%@&hours=24&key=f3da95f3913d4b8c9f45ba4eea5e3225", location.city, location.countryCode)
+            WEEKLYFORECAST_URL = String(format: "https://api.weatherbit.io/v2.0/forecast/daily?city=%@,%@&hours=24&key=f3da95f3913d4b8c9f45ba4eea5e3225", location.city, location.countryCode)
         } else {
             
             WEEKLYFORECAST_URL = CURRENTLOCATIONWEEKLYFORECAST_URL
@@ -82,7 +82,7 @@ class WeeklyWeatherForecast {
                     }
                 }
 
-                print("weekly data:", result.value)
+                print("weekly data:", result.value as Any)
                 completion(forecastArray)
             } else {
                 completion(forecastArray)

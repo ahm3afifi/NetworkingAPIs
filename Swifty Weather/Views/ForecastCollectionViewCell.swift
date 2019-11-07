@@ -25,6 +25,7 @@ class ForecastCollectionViewCell: UICollectionViewCell {
     
     func generateCell(weather: HourlyForecast) {
         timeLabel.text = weather.date.time()
+        timeLabel.adjustsFontSizeToFitWidth = true
         weatherIconImageView.image = getWeatherIconFor(weather.weatherIcon)
         tempLabel.text = "\(weather.temp)"
     }

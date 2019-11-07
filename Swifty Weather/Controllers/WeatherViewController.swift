@@ -29,7 +29,7 @@ class WeatherViewController: UIViewController {
         weatherView.frame = CGRect(x: 0, y: 0, width: weatherScrollView.bounds.width, height: weatherScrollView.bounds.height)
         weatherScrollView.addSubview(weatherView)
         
-        weatherLocation = WeatherLocation(city: "Aswan", country: "Egypt", countryCode: "EG", isCurrentLocation: false)
+        weatherLocation = WeatherLocation(city: "Cairo", country: "Egypt", countryCode: "EG", isCurrentLocation: false)
         
         getCurrentWeather(weatherView: weatherView)
         getWeeklyWeather(weatherView: weatherView)
