@@ -8,8 +8,8 @@
 
 import Foundation
 
-
-struct WeatherLocation {
+// added Equatable protocol to this struct to make it comparable
+struct WeatherLocation: Codable, Equatable {
     
     var city: String!
     var country: String!

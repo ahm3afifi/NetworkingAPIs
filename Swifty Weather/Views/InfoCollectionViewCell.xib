@@ -16,7 +16,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vM-wv-6Kx">
-                        <rect key="frame" x="3" y="5" width="74" height="20"/>
+                        <rect key="frame" x="8" y="5" width="64" height="20"/>
                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -29,7 +29,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKk-lC-4Nd">
-                        <rect key="frame" x="3" y="55" width="74" height="20"/>
+                        <rect key="frame" x="8" y="55" width="64" height="20"/>
                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -37,14 +37,14 @@
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="9vM-wv-6Kx" secondAttribute="trailing" constant="3" id="8TB-BP-pt5"/>
+                <constraint firstAttribute="trailing" secondItem="9vM-wv-6Kx" secondAttribute="trailing" constant="8" id="8TB-BP-pt5"/>
                 <constraint firstItem="WsS-cA-eQB" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="PRA-Zf-qBz"/>
                 <constraint firstAttribute="bottom" secondItem="WsS-cA-eQB" secondAttribute="bottom" constant="5" id="W1c-l4-TSa"/>
-                <constraint firstAttribute="trailing" secondItem="dKk-lC-4Nd" secondAttribute="trailing" constant="3" id="b4Z-s9-T2O"/>
+                <constraint firstAttribute="trailing" secondItem="dKk-lC-4Nd" secondAttribute="trailing" constant="8" id="b4Z-s9-T2O"/>
                 <constraint firstAttribute="bottom" secondItem="dKk-lC-4Nd" secondAttribute="bottom" constant="5" id="ghL-vE-Lpk"/>
-                <constraint firstItem="9vM-wv-6Kx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="3" id="gog-Lj-4RJ"/>
+                <constraint firstItem="9vM-wv-6Kx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="gog-Lj-4RJ"/>
                 <constraint firstItem="9vM-wv-6Kx" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="its-s9-xLP"/>
-                <constraint firstItem="dKk-lC-4Nd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="3" id="no5-8h-8vP"/>
+                <constraint firstItem="dKk-lC-4Nd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="no5-8h-8vP"/>
             </constraints>
             <connections>
                 <outlet property="infoImageView" destination="WsS-cA-eQB" id="Qsb-Uo-Lgk"/>

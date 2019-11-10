@@ -11,7 +11,6 @@
 		7626D453235387BB00597D05 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7626D452235387BB00597D05 /* WeatherViewController.swift */; };
 		76342399236EFFCC00F55A07 /* WeatherLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76342398236EFFCC00F55A07 /* WeatherLocation.swift */; };
 		7634239B236F01C100F55A07 /* APIUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7634239A236F01C100F55A07 /* APIUrls.swift */; };
-		7663C56D2374AECA00CB5FC6 /* APIUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7663C56C2374AECA00CB5FC6 /* APIUrls.swift */; };
 		7670E1C4234FCA8E000C71BC /* HourlyForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7670E1C3234FCA8E000C71BC /* HourlyForecast.swift */; };
 		767D061A23414665005D9057 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767D061923414665005D9057 /* AppDelegate.swift */; };
 		767D061C23414665005D9057 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767D061B23414665005D9057 /* SceneDelegate.swift */; };
@@ -151,11 +150,11 @@
 			isa = PBXGroup;
 			children = (
 				767D061923414665005D9057 /* AppDelegate.swift */,
+				767D061B23414665005D9057 /* SceneDelegate.swift */,
 				7694A9502371C53900501495 /* Controllers */,
 				76342395236EFE8100F55A07 /* Extensions */,
 				769C669D23548BDB007069D9 /* Views */,
 				76342396236EFE9700F55A07 /* Model Helpers */,
-				767D061B23414665005D9057 /* SceneDelegate.swift */,
 				76342397236EFEB300F55A07 /* Helpers */,
 				76139E8A234F6FEF0015AD55 /* Model */,
 				767D061F23414665005D9057 /* Main.storyboard */,
@@ -231,7 +230,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "Ahmed Afifi";
 				TargetAttributes = {
 					767D061523414665005D9057 = {
@@ -337,7 +336,6 @@
 				76CA94DC236DA2A8000D1A72 /* ForecastCollectionViewCell.swift in Sources */,
 				7634239B236F01C100F55A07 /* APIUrls.swift in Sources */,
 				7694A9522371C56800501495 /* AllLocationsTableViewController.swift in Sources */,
-				7663C56D2374AECA00CB5FC6 /* APIUrls.swift in Sources */,
 				76CA94E4236DB185000D1A72 /* InfoCollectionViewCell.swift in Sources */,
 				76CA94EA236DFFA6000D1A72 /* WeatherTableViewCell.swift in Sources */,
 				769F49DD23546FFF00E8A170 /* WeatherView.swift in Sources */,
@@ -416,7 +414,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -470,7 +468,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -495,7 +493,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.AhmedAfifi.Swifty-Weather";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -514,7 +512,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.AhmedAfifi.Swifty-Weather";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
