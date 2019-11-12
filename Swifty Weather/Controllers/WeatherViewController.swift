@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class WeatherViewController: UIViewController {
     
@@ -14,18 +15,24 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var weatherScrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
     
-    
+    //MARK: Variables
     var weatherLocation: WeatherLocation!
+    var locationsManager: CLLocationManager?
+    var currentLocation: CLLocationCoordinate2D!
+    
+    
     
     //MARK: ViewLifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        locationManagerStart()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         
-        let weatherView = WeatherView()
+       /* let weatherView = WeatherView()
         weatherView.frame = CGRect(x: 0, y: 0, width: weatherScrollView.bounds.width, height: weatherScrollView.bounds.height)
         weatherScrollView.addSubview(weatherView)
         
@@ -33,12 +40,16 @@ class WeatherViewController: UIViewController {
         
         getCurrentWeather(weatherView: weatherView)
         getWeeklyWeather(weatherView: weatherView)
-        getHourlyWeather(weatherView: weatherView)
+        getHourlyWeather(weatherView: weatherView) */
         
     }
     
     
     //MARK: Download Weather
+    
+    private func getWeather() {
+        
+    }
     
     private func getCurrentWeather(weatherView: WeatherView) {
         
@@ -68,5 +79,54 @@ class WeatherViewController: UIViewController {
     }
     
     
+    
+    
+    //MARK: Location Manager
+    private func locationManagerStart() {
+        
+        if locationsManager == nil {
+            locationsManager = CLLocationManager()
+            locationsManager!.desiredAccuracy = kCLLocationAccuracyBest
+            locationsManager!.requestWhenInUseAuthorization()
+            locationsManager!.delegate = self
+        }
+        
+        locationsManager!.startMonitoringSignificantLocationChanges()
+    }
 
+    private func locationManagerStop() {
+        if locationsManager != nil {
+            locationsManager!.stopMonitoringSignificantLocationChanges()
+        }
+    }
+    
+    private func locationAuthCheck() {
+        
+        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            
+            currentLocation = locationsManager!.location?.coordinate
+            
+            if currentLocation != nil {
+                LocationService.shared.latitude = currentLocation.latitude
+                LocationService.shared.longitude = currentLocation.longitude
+
+                getWeather()
+            } else {
+                locationAuthCheck()
+            }
+        } else {
+            locationsManager?.requestWhenInUseAuthorization()
+            locationAuthCheck()
+        }
+    }
+}
+
+
+
+
+extension WeatherViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Failed to get location, \(error.localizedDescription)")
+    }
 }

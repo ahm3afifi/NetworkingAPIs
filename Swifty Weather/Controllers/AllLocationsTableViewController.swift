@@ -9,59 +9,43 @@
 import UIKit
 
 class AllLocationsTableViewController: UITableViewController {
-
+    
+    //MARK: Variables
+    let userDefaults = UserDefaults.standard
+    var savedLocations: [WeatherLocation]?
+    var weatherData: [CityTempData]?
+    
+    
+    
+    //MARK: View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        loadFromUserDefaults()
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return weatherData?.count ?? 0
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LocationsCell", for: indexPath) as! MainWeatherTableViewCell
+        
+        if weatherData != nil {
+            cell.generateCell(weatherData: weatherData![indexPath.row])
+        }
 
         return cell
     }
-    */
+    
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
+    
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
+    
+    
     /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
@@ -86,5 +70,76 @@ class AllLocationsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    //MARK: TableViewDelegate
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
+    // Override to support conditional editing of the table view.
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // This means we don't want to edit the first cell because it's the current location
+        return indexPath.row != 0
+    }
+    
+    // Override to support editing the table view.
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let locationToDelete = weatherData?[indexPath.row]
+            weatherData?.remove(at: indexPath.row)
+            removeLocationFromSavedLocations(location: locationToDelete!.city)
+            tableView.reloadData()
+        }
+    }
+    
+    private func removeLocationFromSavedLocations(location: String) {
+        
+        if savedLocations != nil {
+            for i in 0..<savedLocations!.count {
+                let tempLocation = savedLocations![i]
+                if tempLocation.city == location {
+                    savedLocations!.remove(at: i)
+                    saveNewLocationToUserDefaults()
+                    return
+                }
+            }
+        }
+    }
 
+    private func saveNewLocationToUserDefaults() {
+        userDefaults.set(try? PropertyListEncoder().encode(savedLocations!), forKey: "Locations")
+        userDefaults.synchronize()
+    }
+    
+
+    //MARK: UserDefaults
+    private func loadFromUserDefaults() {
+        if let data = userDefaults.value(forKey: "Locations") as? Data {
+            savedLocations = try? PropertyListDecoder().decode(Array<WeatherLocation>.self, from: data)
+            print("we have \(savedLocations?.count) locations in userDefaults")
+        }
+    }
+    
+    
+    //MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "chooseLocationSeg" {
+            let vc = segue.destination as! ChooseCityViewController
+            vc.delegate = self
+        }
+    }
+
+    
+}
+
+
+extension AllLocationsTableViewController: ChooseCityViewControllerDelegate {
+    func didAdd(newLocation: WeatherLocation) {
+        print("We have added new location", newLocation.country, newLocation.city
+        )
+    }
+    
+    
+    
 }

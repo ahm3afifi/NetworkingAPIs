@@ -8,6 +8,12 @@
 
 import UIKit
 
+
+protocol ChooseCityViewControllerDelegate {
+    func didAdd(newLocation: WeatherLocation)
+}
+
+
 class ChooseCityViewController: UIViewController {
 
     
@@ -23,6 +29,7 @@ class ChooseCityViewController: UIViewController {
     
     let userDefaults = UserDefaults.standard
     var savedLocations: [WeatherLocation]?
+    var delegate: ChooseCityViewControllerDelegate?
     
 
     //MARK: View Life Cycle
@@ -135,6 +142,7 @@ class ChooseCityViewController: UIViewController {
         
         if let data = userDefaults.value(forKey: "Locations") as? Data {
             savedLocations = try? PropertyListDecoder().decode(Array<WeatherLocation>.self, from: data)
+            print(savedLocations?.first?.country)
         }
     }
     
@@ -198,6 +206,7 @@ extension ChooseCityViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         
         saveToUserDefaults(location: filteredLocations[indexPath.row])
+        delegate?.didAdd(newLocation: filteredLocations[indexPath.row])
         dismissView()
     }
     

@@ -70,7 +70,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="exX-sY-kpk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="uXn-jh-Cp1">
                             <rect key="frame" x="0.0" y="136" width="414" height="55"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -83,7 +83,7 @@
                                     </constraints>
                                     <state key="normal" title="Add"/>
                                     <connections>
-                                        <segue destination="Whs-nK-U14" kind="show" id="4Fh-i3-QSM"/>
+                                        <segue destination="Whs-nK-U14" kind="show" identifier="chooseLocationSeg" id="4Fh-i3-QSM"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -95,13 +95,42 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Qh3-vO-3EZ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SavedCell" id="Qh3-vO-3EZ" customClass="MainWeatherTableViewCell" customModule="Swifty_Weather" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qh3-vO-3EZ" id="eIS-7c-Tiu">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3i-2S-Bau">
+                                            <rect key="frame" x="20" y="29" width="306" height="22"/>
+                                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="19"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100FC" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jI-yD-79q">
+                                            <rect key="frame" x="334" y="31.333333333333329" width="60" height="17.666666666666671"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="60" id="qHE-2A-Iry"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="15"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="3jI-yD-79q" firstAttribute="trailing" secondItem="eIS-7c-Tiu" secondAttribute="trailingMargin" id="4K5-sc-vbM"/>
+                                        <constraint firstItem="S3i-2S-Bau" firstAttribute="leading" secondItem="eIS-7c-Tiu" secondAttribute="leadingMargin" id="UkN-Yh-Idt"/>
+                                        <constraint firstItem="3jI-yD-79q" firstAttribute="centerY" secondItem="eIS-7c-Tiu" secondAttribute="centerY" id="dL3-C0-r9F"/>
+                                        <constraint firstItem="S3i-2S-Bau" firstAttribute="centerY" secondItem="eIS-7c-Tiu" secondAttribute="centerY" id="uHJ-Q2-GyC"/>
+                                        <constraint firstItem="3jI-yD-79q" firstAttribute="leading" secondItem="S3i-2S-Bau" secondAttribute="trailing" constant="8" id="w1Y-Ky-7nW"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="cityLabel" destination="S3i-2S-Bau" id="AHM-qX-zNQ"/>
+                                    <outlet property="tempLabel" destination="3jI-yD-79q" id="t43-oF-TZB"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
