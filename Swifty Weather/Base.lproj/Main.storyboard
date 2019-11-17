@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="y2X-DD-Hmh">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
@@ -70,7 +70,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="exX-sY-kpk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="uXn-jh-Cp1">
                             <rect key="frame" x="0.0" y="136" width="414" height="55"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -86,12 +86,26 @@
                                         <segue destination="Whs-nK-U14" kind="show" identifier="chooseLocationSeg" id="4Fh-i3-QSM"/>
                                     </connections>
                                 </button>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="14b-Ab-mBB">
+                                    <rect key="frame" x="20" y="12" width="100" height="32"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="100" id="XaG-Mh-4Hu"/>
+                                    </constraints>
+                                    <segments>
+                                        <segment title="°C"/>
+                                        <segment title="℉"/>
+                                    </segments>
+                                    <connections>
+                                        <action selector="tempSegmentValueChanged:" destination="9Rk-5o-PqD" eventType="valueChanged" id="DtH-Py-Wcq"/>
+                                    </connections>
+                                </segmentedControl>
                             </subviews>
-                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstItem="14b-Ab-mBB" firstAttribute="leading" secondItem="uXn-jh-Cp1" secondAttribute="leading" constant="20" id="0Lw-mS-Scf"/>
                                 <constraint firstItem="htk-L0-8gQ" firstAttribute="leading" secondItem="uXn-jh-Cp1" secondAttribute="leading" constant="331" id="6y6-Ym-sKM"/>
                                 <constraint firstItem="htk-L0-8gQ" firstAttribute="centerY" secondItem="uXn-jh-Cp1" secondAttribute="centerY" id="ISv-zN-lgr"/>
                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="htk-L0-8gQ" secondAttribute="trailing" constant="20" symbolic="YES" id="SJv-4W-ZHL"/>
+                                <constraint firstItem="14b-Ab-mBB" firstAttribute="centerY" secondItem="uXn-jh-Cp1" secondAttribute="centerY" id="Ty4-v9-cFE"/>
                             </constraints>
                         </view>
                         <prototypes>
@@ -102,19 +116,30 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3i-2S-Bau">
-                                            <rect key="frame" x="20" y="29" width="306" height="22"/>
-                                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="19"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3i-2S-Bau">
+                                            <rect key="frame" x="20" y="28" width="306" height="24"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Label">
+                                                    <attributes>
+                                                        <font key="NSFont" size="24" name="BebasNeue-Regular"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100FC" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jI-yD-79q">
-                                            <rect key="frame" x="334" y="31.333333333333329" width="60" height="17.666666666666671"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jI-yD-79q">
+                                            <rect key="frame" x="334" y="28" width="60" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="60" id="qHE-2A-Iry"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="15"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="100FC">
+                                                    <attributes>
+                                                        <font key="NSFont" size="24" name="BebasNeue-Regular"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -126,7 +151,6 @@
                                         <constraint firstItem="3jI-yD-79q" firstAttribute="leading" secondItem="S3i-2S-Bau" secondAttribute="trailing" constant="8" id="w1Y-Ky-7nW"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="cityLabel" destination="S3i-2S-Bau" id="AHM-qX-zNQ"/>
                                     <outlet property="tempLabel" destination="3jI-yD-79q" id="t43-oF-TZB"/>
@@ -139,6 +163,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="oPa-vn-ArE"/>
+                    <connections>
+                        <outlet property="footerView" destination="uXn-jh-Cp1" id="tXm-fM-Hcx"/>
+                        <outlet property="tempSegmentOutlet" destination="14b-Ab-mBB" id="q8u-Au-hTf"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f7C-5n-B5D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

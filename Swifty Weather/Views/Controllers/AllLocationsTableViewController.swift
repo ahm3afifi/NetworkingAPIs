@@ -8,20 +8,36 @@
 
 import UIKit
 
+protocol AllLocationsTableViewControllerDelegate {
+    func didChooseLocation(atIndex: Int, shouldRefresh: Bool)
+}
+
 class AllLocationsTableViewController: UITableViewController {
+    
+    //MARK: IBOutlets
+    @IBOutlet weak var tempSegmentOutlet: UISegmentedControl!
+    @IBOutlet weak var footerView: UIView!
+    
     
     //MARK: Variables
     let userDefaults = UserDefaults.standard
     var savedLocations: [WeatherLocation]?
     var weatherData: [CityTempData]?
     
-    
+    var delegate: AllLocationsTableViewControllerDelegate?
+    var shouldRefresh = false
     
     //MARK: View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         loadFromUserDefaults()
     }
+    
+    //MARK: IBActions
+    @IBAction func tempSegmentValueChanged(_ sender: Any) {
+        
+    }
+    
 
     // MARK: - Table view data source
 
@@ -46,6 +62,9 @@ class AllLocationsTableViewController: UITableViewController {
     //MARK: TableViewDelegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        tableView.deselectRow(at: indexPath, animated: true)
+        delegate?.didChooseLocation(atIndex: indexPath.row, shouldRefresh: shouldRefresh)
+        self.dismiss(animated: true, completion: nil)
     }
     
     // Override to support conditional editing of the table view.
@@ -80,6 +99,8 @@ class AllLocationsTableViewController: UITableViewController {
     }
 
     private func saveNewLocationToUserDefaults() {
+        shouldRefresh = true
+        
         userDefaults.set(try? PropertyListEncoder().encode(savedLocations!), forKey: "Locations")
         userDefaults.synchronize()
     }
@@ -107,8 +128,10 @@ class AllLocationsTableViewController: UITableViewController {
 
 extension AllLocationsTableViewController: ChooseCityViewControllerDelegate {
     func didAdd(newLocation: WeatherLocation) {
-        print("We have added new location", newLocation.country, newLocation.city
-        )
+        shouldRefresh = true
+        
+        weatherData?.append(CityTempData(city: newLocation.city, temp: 0.0))
+        tableView.reloadData()
     }
     
     

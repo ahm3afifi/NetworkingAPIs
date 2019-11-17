@@ -81,7 +81,6 @@ class WeeklyWeatherForecast {
                     }
                 }
 
-                print("weekly data:", result.value as Any)
                 completion(forecastArray)
             } else {
                 completion(forecastArray)
