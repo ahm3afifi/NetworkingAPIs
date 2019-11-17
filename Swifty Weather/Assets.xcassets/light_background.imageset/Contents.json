@@ -2,7 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "light_background.pdf"
+      "filename" : "xiaomi-mi-cc9-wall-droidviews-9.pdf"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "xiaomi-mi-cc9-wall-droidviews-14.pdf",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ]
     }
   ],
   "info" : {

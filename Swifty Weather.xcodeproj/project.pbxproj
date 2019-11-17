@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7606B70923806A89001CE4DA /* BebasNeue-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7606B70423806A88001CE4DA /* BebasNeue-Light.ttf */; };
+		7606B70A23806A89001CE4DA /* BebasNeue-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7606B70523806A89001CE4DA /* BebasNeue-Bold.ttf */; };
+		7606B70B23806A89001CE4DA /* BebasNeue-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7606B70623806A89001CE4DA /* BebasNeue-Book.ttf */; };
+		7606B70C23806A89001CE4DA /* BebasNeue-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7606B70723806A89001CE4DA /* BebasNeue-Regular.ttf */; };
+		7606B70D23806A89001CE4DA /* BebasNeue-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7606B70823806A89001CE4DA /* BebasNeue-Thin.ttf */; };
 		76139E89234F6FE80015AD55 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76139E88234F6FE80015AD55 /* CurrentWeather.swift */; };
 		7626D453235387BB00597D05 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7626D452235387BB00597D05 /* WeatherViewController.swift */; };
 		76342399236EFFCC00F55A07 /* WeatherLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76342398236EFFCC00F55A07 /* WeatherLocation.swift */; };
@@ -34,6 +39,7 @@
 		76D0ACBC2378CB1B00A06A0F /* MainWeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D0ACBB2378CB1B00A06A0F /* MainWeatherTableViewCell.swift */; };
 		76D0ACBE2378CCBD00A06A0F /* CityTempData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D0ACBD2378CCBD00A06A0F /* CityTempData.swift */; };
 		76D5B463235E66C000DAF06F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D5B462235E66C000DAF06F /* Extensions.swift */; };
+		76DE2FC9238075D700FC46F9 /* sf-ui-display-heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76DE2FC8238075D600FC46F9 /* sf-ui-display-heavy.ttf */; };
 		76F09FB02374B72A005BFFF1 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F09FAF2374B72A005BFFF1 /* RoundedView.swift */; };
 		76F9EDF9235138E9002B14C0 /* WeeklyWeatherForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F9EDF8235138E9002B14C0 /* WeeklyWeatherForecast.swift */; };
 		97C0D9FF25AD173B2B5C428D /* Pods_Swifty_Weather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C9D9A566906FE276335963 /* Pods_Swifty_Weather.framework */; };
@@ -42,6 +48,11 @@
 /* Begin PBXFileReference section */
 		187F502745C5E358A989E2E8 /* Pods-Swifty Weather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swifty Weather.debug.xcconfig"; path = "Target Support Files/Pods-Swifty Weather/Pods-Swifty Weather.debug.xcconfig"; sourceTree = "<group>"; };
 		25C9D9A566906FE276335963 /* Pods_Swifty_Weather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swifty_Weather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7606B70423806A88001CE4DA /* BebasNeue-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue-Light.ttf"; sourceTree = "<group>"; };
+		7606B70523806A89001CE4DA /* BebasNeue-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue-Bold.ttf"; sourceTree = "<group>"; };
+		7606B70623806A89001CE4DA /* BebasNeue-Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue-Book.ttf"; sourceTree = "<group>"; };
+		7606B70723806A89001CE4DA /* BebasNeue-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue-Regular.ttf"; sourceTree = "<group>"; };
+		7606B70823806A89001CE4DA /* BebasNeue-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue-Thin.ttf"; sourceTree = "<group>"; };
 		76139E88234F6FE80015AD55 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		7626D452235387BB00597D05 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		76342398236EFFCC00F55A07 /* WeatherLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherLocation.swift; sourceTree = "<group>"; };
@@ -72,6 +83,7 @@
 		76D0ACBB2378CB1B00A06A0F /* MainWeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWeatherTableViewCell.swift; sourceTree = "<group>"; };
 		76D0ACBD2378CCBD00A06A0F /* CityTempData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTempData.swift; sourceTree = "<group>"; };
 		76D5B462235E66C000DAF06F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		76DE2FC8238075D600FC46F9 /* sf-ui-display-heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sf-ui-display-heavy.ttf"; sourceTree = "<group>"; };
 		76F09FAF2374B72A005BFFF1 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		76F9EDF8235138E9002B14C0 /* WeeklyWeatherForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyWeatherForecast.swift; sourceTree = "<group>"; };
 		92CD529F018B1E8C7F9C4C3D /* Pods-Swifty Weather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swifty Weather.release.xcconfig"; path = "Target Support Files/Pods-Swifty Weather/Pods-Swifty Weather.release.xcconfig"; sourceTree = "<group>"; };
@@ -96,6 +108,19 @@
 				92CD529F018B1E8C7F9C4C3D /* Pods-Swifty Weather.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		7606B7002380661E001CE4DA /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7606B70523806A89001CE4DA /* BebasNeue-Bold.ttf */,
+				7606B70623806A89001CE4DA /* BebasNeue-Book.ttf */,
+				7606B70423806A88001CE4DA /* BebasNeue-Light.ttf */,
+				7606B70723806A89001CE4DA /* BebasNeue-Regular.ttf */,
+				7606B70823806A89001CE4DA /* BebasNeue-Thin.ttf */,
+				76DE2FC8238075D600FC46F9 /* sf-ui-display-heavy.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		76139E8A234F6FEF0015AD55 /* Model */ = {
@@ -157,6 +182,7 @@
 		767D061823414665005D9057 /* Swifty Weather */ = {
 			isa = PBXGroup;
 			children = (
+				7606B7002380661E001CE4DA /* Fonts */,
 				767D061923414665005D9057 /* AppDelegate.swift */,
 				767D061B23414665005D9057 /* SceneDelegate.swift */,
 				7694A9502371C53900501495 /* Controllers */,
@@ -272,10 +298,16 @@
 			files = (
 				76CA94E5236DB185000D1A72 /* InfoCollectionViewCell.xib in Resources */,
 				767D062623414667005D9057 /* LaunchScreen.storyboard in Resources */,
+				7606B70C23806A89001CE4DA /* BebasNeue-Regular.ttf in Resources */,
+				7606B70A23806A89001CE4DA /* BebasNeue-Bold.ttf in Resources */,
+				76DE2FC9238075D700FC46F9 /* sf-ui-display-heavy.ttf in Resources */,
+				7606B70D23806A89001CE4DA /* BebasNeue-Thin.ttf in Resources */,
+				7606B70B23806A89001CE4DA /* BebasNeue-Book.ttf in Resources */,
 				767D062323414667005D9057 /* Assets.xcassets in Resources */,
 				767D062123414665005D9057 /* Main.storyboard in Resources */,
 				76CA94DD236DA2A8000D1A72 /* ForecastCollectionViewCell.xib in Resources */,
 				769F49DE23546FFF00E8A170 /* WeatherView.xib in Resources */,
+				7606B70923806A89001CE4DA /* BebasNeue-Light.ttf in Resources */,
 				76CA94EB236DFFA6000D1A72 /* WeatherTableViewCell.xib in Resources */,
 				7694A94F2371C2DE00501495 /* location.csv in Resources */,
 			);
