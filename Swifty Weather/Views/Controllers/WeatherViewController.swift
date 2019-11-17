@@ -86,6 +86,7 @@ class WeatherViewController: UIViewController {
         weatherView.currentWeather = CurrentWeather()
         weatherView.currentWeather.getCurrentWeather(location: location) { (success) in
         weatherView.refreshData()
+            self.generateWeatherList()
         }
         
     }
@@ -172,6 +173,25 @@ class WeatherViewController: UIViewController {
         } else {
             locationsManager?.requestWhenInUseAuthorization()
             locationAuthCheck()
+        }
+    }
+    
+    private func generateWeatherList() {
+        
+        allWeatherData = []
+        
+        for weatherView in allWeatherViews {
+            
+            allWeatherData.append(CityTempData(city: weatherView.currentWeather.city, temp: weatherView.currentWeather.currentTemp))
+        }
+                        
+    }
+    
+    //MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "allLocationSegue" {
+            let vc = segue.destination as! AllLocationsTableViewController
+            vc.weatherData = allWeatherData
         }
     }
 }

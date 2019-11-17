@@ -41,35 +41,6 @@ class AllLocationsTableViewController: UITableViewController {
         return cell
     }
     
-
-    
-
-    
-    
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     
     //MARK: TableViewDelegate
@@ -88,6 +59,7 @@ class AllLocationsTableViewController: UITableViewController {
         if editingStyle == .delete {
             let locationToDelete = weatherData?[indexPath.row]
             weatherData?.remove(at: indexPath.row)
+            
             removeLocationFromSavedLocations(location: locationToDelete!.city)
             tableView.reloadData()
         }
@@ -117,7 +89,6 @@ class AllLocationsTableViewController: UITableViewController {
     private func loadFromUserDefaults() {
         if let data = userDefaults.value(forKey: "Locations") as? Data {
             savedLocations = try? PropertyListDecoder().decode(Array<WeatherLocation>.self, from: data)
-            print("we have \(savedLocations?.count) locations in userDefaults")
         }
     }
     

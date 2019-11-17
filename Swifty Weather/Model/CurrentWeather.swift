@@ -162,7 +162,7 @@ class CurrentWeather {
                 completion(true)
                 
             } else {
-                
+                self._city = location.city
                 completion(false)
                 print("No result found for current location")
             }

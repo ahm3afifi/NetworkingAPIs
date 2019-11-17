@@ -185,7 +185,6 @@
 				7606B7002380661E001CE4DA /* Fonts */,
 				767D061923414665005D9057 /* AppDelegate.swift */,
 				767D061B23414665005D9057 /* SceneDelegate.swift */,
-				7694A9502371C53900501495 /* Controllers */,
 				76342395236EFE8100F55A07 /* Extensions */,
 				769C669D23548BDB007069D9 /* Views */,
 				76342396236EFE9700F55A07 /* Model Helpers */,
@@ -215,6 +214,7 @@
 		769C669D23548BDB007069D9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7694A9502371C53900501495 /* Controllers */,
 				769F49DB23546FFF00E8A170 /* WeatherView.swift */,
 				769F49DC23546FFF00E8A170 /* WeatherView.xib */,
 				76CA94DA236DA2A8000D1A72 /* ForecastCollectionViewCell.swift */,
