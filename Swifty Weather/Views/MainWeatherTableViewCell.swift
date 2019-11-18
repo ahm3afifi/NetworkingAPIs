@@ -30,7 +30,7 @@ class MainWeatherTableViewCell: UITableViewCell {
         
         cityLabel.text = weatherData.city
         cityLabel.adjustsFontSizeToFitWidth = true
-        tempLabel.text = String(format: "%.0f C", weatherData.temp)
+        tempLabel.text = String(format: "%.0f %@", weatherData.temp, returnTempFormatFromUserDefaults())
         //TODO: make temp format dynamic
     }
 

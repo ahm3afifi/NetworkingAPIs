@@ -75,13 +75,13 @@
                             <rect key="frame" x="0.0" y="136" width="414" height="55"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="htk-L0-8gQ">
-                                    <rect key="frame" x="331" y="12.666666666666664" width="63" height="30"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="htk-L0-8gQ">
+                                    <rect key="frame" x="364" y="16.666666666666668" width="30" height="22.000000000000004"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="30" id="36M-GO-7XT"/>
-                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="sxn-CI-7dg"/>
+                                        <constraint firstAttribute="width" constant="30" id="yU6-am-F2f"/>
                                     </constraints>
-                                    <state key="normal" title="Add"/>
+                                    <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <state key="normal" image="plus" catalog="system"/>
                                     <connections>
                                         <segue destination="Whs-nK-U14" kind="show" identifier="chooseLocationSeg" id="4Fh-i3-QSM"/>
                                     </connections>
@@ -101,10 +101,9 @@
                                 </segmentedControl>
                             </subviews>
                             <constraints>
+                                <constraint firstAttribute="trailing" secondItem="htk-L0-8gQ" secondAttribute="trailing" constant="20" id="0G8-Ih-yQc"/>
                                 <constraint firstItem="14b-Ab-mBB" firstAttribute="leading" secondItem="uXn-jh-Cp1" secondAttribute="leading" constant="20" id="0Lw-mS-Scf"/>
-                                <constraint firstItem="htk-L0-8gQ" firstAttribute="leading" secondItem="uXn-jh-Cp1" secondAttribute="leading" constant="331" id="6y6-Ym-sKM"/>
                                 <constraint firstItem="htk-L0-8gQ" firstAttribute="centerY" secondItem="uXn-jh-Cp1" secondAttribute="centerY" id="ISv-zN-lgr"/>
-                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="htk-L0-8gQ" secondAttribute="trailing" constant="20" symbolic="YES" id="SJv-4W-ZHL"/>
                                 <constraint firstItem="14b-Ab-mBB" firstAttribute="centerY" secondItem="uXn-jh-Cp1" secondAttribute="centerY" id="Ty4-v9-cFE"/>
                             </constraints>
                         </view>
@@ -234,4 +233,7 @@
             <point key="canvasLocation" x="2008.6956521739132" y="-398.4375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="plus" catalog="system" width="64" height="56"/>
+    </resources>
 </document>

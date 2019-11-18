@@ -30,15 +30,19 @@ class AllLocationsTableViewController: UITableViewController {
     //MARK: View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadFromUserDefaults()
+        
+        tableView.tableFooterView = footerView
+        
+        loadLocationsFromUserDefaults()
+        loadTempFormatUserDefaults()
     }
     
     //MARK: IBActions
-    @IBAction func tempSegmentValueChanged(_ sender: Any) {
-        
+    @IBAction func tempSegmentValueChanged(_ sender: UISegmentedControl) {
+        updateTempFormatInUserDefaults(newValue: sender.selectedSegmentIndex)
     }
     
-
+    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -97,7 +101,10 @@ class AllLocationsTableViewController: UITableViewController {
             }
         }
     }
+    
 
+    //MARK: UserDefaults
+    
     private func saveNewLocationToUserDefaults() {
         shouldRefresh = true
         
@@ -105,11 +112,24 @@ class AllLocationsTableViewController: UITableViewController {
         userDefaults.synchronize()
     }
     
-
-    //MARK: UserDefaults
-    private func loadFromUserDefaults() {
+    private func loadLocationsFromUserDefaults() {
         if let data = userDefaults.value(forKey: "Locations") as? Data {
             savedLocations = try? PropertyListDecoder().decode(Array<WeatherLocation>.self, from: data)
+        }
+    }
+    
+    private func updateTempFormatInUserDefaults(newValue: Int) {
+        shouldRefresh = true
+        userDefaults.set(newValue, forKey: "TempFormat")
+        userDefaults.synchronize()
+    }
+    
+    private func loadTempFormatUserDefaults() {
+        
+        if let index = userDefaults.value(forKey: "TempFormat") {
+            tempSegmentOutlet.selectedSegmentIndex = index as! Int
+        } else {
+            tempSegmentOutlet.selectedSegmentIndex = 0
         }
     }
     

@@ -27,7 +27,9 @@ class ForecastCollectionViewCell: UICollectionViewCell {
         timeLabel.text = weather.date.time()
         timeLabel.adjustsFontSizeToFitWidth = true
         weatherIconImageView.image = getWeatherIconFor(weather.weatherIcon)
-        tempLabel.text = "\(weather.temp)"
+        tempLabel.text = String(format: "%.0f%@", weather.temp, returnTempFormatFromUserDefaults())
+        
+        
     }
 
 }

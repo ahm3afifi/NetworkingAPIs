@@ -41,7 +41,7 @@ class WeatherViewController: UIViewController {
         if shouldRefresh {
             allLocations = []
             allWeatherViews = []
-            
+            removeViewFromScrollView()
             locationAuthCheck()
         }
         
@@ -60,6 +60,15 @@ class WeatherViewController: UIViewController {
         createWeatherView()
         addWeatherToScrollView()
         setPageControlPageNumber()
+        
+        print("we have \(weatherScrollView.subviews.count)")
+    }
+    
+    // This function to fix issue with viewing the locations after removing it
+    private func removeViewFromScrollView() {
+        for view in weatherScrollView.subviews {
+            view.removeFromSuperview()
+        }
     }
     
     
