@@ -76,12 +76,13 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="htk-L0-8gQ">
-                                    <rect key="frame" x="364" y="16.666666666666668" width="30" height="22.000000000000004"/>
+                                    <rect key="frame" x="364" y="12.666666666666664" width="30" height="30"/>
                                     <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="Anl-Jn-6Ou"/>
                                         <constraint firstAttribute="width" constant="30" id="yU6-am-F2f"/>
                                     </constraints>
                                     <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <state key="normal" image="plus" catalog="system"/>
+                                    <state key="normal" image="pixn"/>
                                     <connections>
                                         <segue destination="Whs-nK-U14" kind="show" identifier="chooseLocationSeg" id="4Fh-i3-QSM"/>
                                     </connections>
@@ -234,6 +235,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="plus" catalog="system" width="64" height="56"/>
+        <image name="pixn" width="384" height="384"/>
     </resources>
 </document>

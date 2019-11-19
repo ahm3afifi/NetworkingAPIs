@@ -60,8 +60,6 @@ class WeatherViewController: UIViewController {
         createWeatherView()
         addWeatherToScrollView()
         setPageControlPageNumber()
-        
-        print("we have \(weatherScrollView.subviews.count)")
     }
     
     // This function to fix issue with viewing the locations after removing it
@@ -186,6 +184,7 @@ class WeatherViewController: UIViewController {
                 locationAuthCheck()
             }
         } else {
+            print("error with location request")
             locationsManager?.requestWhenInUseAuthorization()
             locationAuthCheck()
         }

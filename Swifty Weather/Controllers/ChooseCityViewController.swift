@@ -43,7 +43,6 @@ class ChooseCityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        tableView.tableFooterView = searchController.searchBar
         tableView.tableFooterView = UIView()
         
         setupSearchController()
@@ -81,7 +80,7 @@ class ChooseCityViewController: UIViewController {
         if let path = Bundle.main.path(forResource: "location", ofType: "csv") {
             parseCSVAt(url: URL(fileURLWithPath: path))
         }
-        self.tableView.reloadData()
+
     }
     
     // parsing CSV file
@@ -97,7 +96,6 @@ class ChooseCityViewController: UIViewController {
                 var i = 0
                 
                 for line in dataArr {
-                    print(line, "\n")
 
                     // To skip the first line from the parsed locations CSV file
                     if line.count > 2 && i != 0 {
@@ -142,7 +140,6 @@ class ChooseCityViewController: UIViewController {
         
         if let data = userDefaults.value(forKey: "Locations") as? Data {
             savedLocations = try? PropertyListDecoder().decode(Array<WeatherLocation>.self, from: data)
-            print(savedLocations?.first?.country)
         }
     }
     
@@ -173,7 +170,6 @@ extension ChooseCityViewController: UISearchResultsUpdating {
             return location.city.lowercased().contains(searchText.lowercased()) || location.country.lowercased().contains(searchText.lowercased())
         })
         tableView.reloadData()
-        print("Searching for \(searchText)")
     }
     
     func updateSearchResults(for searchController: UISearchController) {

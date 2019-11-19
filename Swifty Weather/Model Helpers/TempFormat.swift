@@ -10,5 +10,5 @@ import Foundation
 
 struct TempFormat {
     static let celsius = "°C"
-    static let fahrenheit = "℉"
+    static let fahrenheit = "°F"
 }

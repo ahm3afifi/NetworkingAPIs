@@ -14,7 +14,7 @@ class CurrentWeather {
 
     private var _city: String!
     private var _date: Date!
-    private var _currentTempo: Double!
+    private var _currentTemp: Double!
     private var _feelsLike: Double!
     private var _uv: Double!
     
@@ -44,10 +44,10 @@ class CurrentWeather {
     }
     
     var currentTemp: Double {
-        if _currentTempo == nil {
-            _currentTempo = 0.0
+        if _currentTemp == nil {
+            _currentTemp = 0.0
         }
-        return _currentTempo
+        return _currentTemp
     }
     
     var feelsLike: Double {
@@ -148,7 +148,7 @@ class CurrentWeather {
                 self._date = currentDateFromUnix(unixDate: json["data"][0]["ts"].double)
                 self._weatherType = json["data"][0]["weather"]["description"].stringValue
                 
-                self._currentTempo = getTempBasedOnSettings(celsius: json["data"][0]["temp"].double ?? 0.0)
+                self._currentTemp = getTempBasedOnSettings(celsius: json["data"][0]["temp"].double ?? 0.0)
                 self._feelsLike = getTempBasedOnSettings(celsius: json["data"][0]["app_temp"].double ?? 0.0)
                 self._pressure = json["data"][0]["pres"].double
                 self._humidity = json["data"][0]["rh"].double
