@@ -1,4 +1,4 @@
-# Swifty-Weather
+# Clear-Forecast
 
 Simple iOS app shows you the weather temperature anywhere around the world. you can also see the temperature for the next 24 hours and a seven day forecast for all cities around the world. This app created by using **REST APIs** and **parsing JSON & CSV** files. This app available on appstore with name **Clear Forecast**.
 
