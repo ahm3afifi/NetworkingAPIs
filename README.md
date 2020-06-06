@@ -1,6 +1,6 @@
 # Clear-Forecast
 
-Simple iOS app shows you the weather temperature anywhere around the world. you can also see the temperature for the next 24 hours and a seven day forecast for all cities around the world. This app created by using **REST APIs** and **parsing JSON & CSV** files. This app available on appstore with name **Clear Forecast**.
+iOS app shows you the weather temperature anywhere around the world. you can also see the temperature for the next 24 hours and a seven day forecast for all cities around the world. This app created by using **REST APIs** and **parsing JSON & CSV** files. This app available on appstore with name **Clear Forecast**.
 
 [<img width="200" src="https://user-images.githubusercontent.com/30387348/72661268-65709500-39f1-11ea-8394-50c516655f14.png" />](https://apps.apple.com/eg/app/clear-forecast/id1488535255) 
 
